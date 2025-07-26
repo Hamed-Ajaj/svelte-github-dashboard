@@ -1,7 +1,5 @@
 <script>
 	import { goto } from '$app/navigation';
-	let { data } = $props();
-	console.log(data);
 	let username = $state('');
 
 	const handleUserName = () => {

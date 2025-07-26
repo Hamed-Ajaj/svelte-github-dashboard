@@ -1,5 +1,7 @@
 export async function load({ params }) {
+
   const { repoId } = params
+
   const repos = fetch(`https://api.github.com/users/${repoId}/repos`)
     .then(res => res.json())
     .catch(error => console.log(error))
@@ -7,6 +9,5 @@ export async function load({ params }) {
   return {
     repos,
     username: repoId
-
   }
 }

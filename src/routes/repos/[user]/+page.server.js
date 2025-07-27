@@ -1,7 +1,7 @@
 export async function load({ params }) {
 
   const token = import.meta.env.VITE_GITHUB_TOKEN;
-  
+
   const { user } = params
 
   const repos = fetch(`https://api.github.com/users/${user}/repos`, {

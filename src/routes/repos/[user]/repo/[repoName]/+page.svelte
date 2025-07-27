@@ -56,6 +56,7 @@
 								<div class="flex items-center gap-3">
 									<a
 										href={repo.svn_url}
+										target="_blank"
 										alt="github page"
 										class="rounded-full bg-white/20 p-3 backdrop-blur-sm transition-all duration-200 hover:scale-110 hover:bg-white/30"
 									>

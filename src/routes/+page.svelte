@@ -1,10 +1,13 @@
 <script>
 	import { goto } from '$app/navigation';
+	import toast, { Toaster } from 'svelte-french-toast';
 	let username = $state('');
 
 	const handleUserName = () => {
-		if (username.trim()) {
+		if (username.trim() && username.length >= 2) {
 			goto(`/repos/${username}`);
+		} else {
+			toast.error('username length should be more than 2');
 		}
 	};
 
@@ -18,6 +21,7 @@
 <div
 	class="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4"
 >
+	<Toaster containerClassName="" />
 	<div class="w-full max-w-md">
 		<div class="rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-lg">
 			<div class="mb-8 text-center">
@@ -33,6 +37,7 @@
 						onkeypress={handleKeyPress}
 						placeholder="Enter GitHub username"
 						class="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder-gray-400 backdrop-blur-sm transition-all duration-200 focus:border-transparent focus:ring-2 focus:ring-purple-500 focus:outline-none"
+						minlength="2"
 					/>
 					<div
 						class="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 transition-opacity duration-200 group-hover:opacity-100"

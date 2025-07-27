@@ -24,6 +24,7 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"lucide-svelte": "^0.526.0"
+		"lucide-svelte": "^0.526.0",
+		"svelte-french-toast": "^1.2.0"
 	}
 }

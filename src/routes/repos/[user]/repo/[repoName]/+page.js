@@ -13,9 +13,11 @@ export async function load({ params }) {
       Authorization: `token ${token}`
     }
   })
-  .then(res => res.json())
-  .catch(error => console.log(error));
+    .then(res => res.json())
+    .catch(error => console.log(error));
   return {
-    repo
+    repo,
+    user,
+    languages
   }
 }

@@ -1,5 +1,8 @@
 <script>
 	import { Github, Earth } from 'lucide-svelte';
+	const handleSubmit = () => {
+		goto(`/repos/${username}`);
+	};
 </script>
 
 <nav

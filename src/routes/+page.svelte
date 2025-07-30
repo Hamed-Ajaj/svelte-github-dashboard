@@ -1,13 +1,12 @@
 <script>
 	import { goto } from '$app/navigation';
-	import toast, { Toaster } from 'svelte-french-toast';
+	import DecorativeElements from '../components/decorative-elements.svelte';
+
 	let username = $state('');
 
 	const handleUserName = () => {
-		if (username.trim() && username.length >= 2) {
+		if (username.trim()) {
 			goto(`/repos/${username}`);
-		} else {
-			toast.error('username length should be more than 2');
 		}
 	};
 
@@ -21,7 +20,6 @@
 <div
 	class="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-4"
 >
-	<Toaster containerClassName="" />
 	<div class="w-full max-w-md">
 		<div class="rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-lg">
 			<div class="mb-8 text-center">
@@ -68,8 +66,6 @@
 			</div>
 		</div>
 
-		<!-- Decorative elements -->
-		<div class="absolute top-1/4 left-1/4 h-32 w-32 rounded-full bg-purple-500/10 blur-xl"></div>
-		<div class="absolute right-1/4 bottom-1/4 h-24 w-24 rounded-full bg-pink-500/10 blur-xl"></div>
+		<DecorativeElements />
 	</div>
 </div>
